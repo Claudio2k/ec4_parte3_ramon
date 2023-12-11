@@ -37,6 +37,28 @@ def save_curso(request):
     courses = Course.objects.all()
     return render(request, 'cursos.html', {'courses': courses})
 
+def save_carrera(request):
+    if request.method == 'GET':
+        name = request.GET['name']
+        shortname = request.GET['shortname']
+        image = request.GET['image']
+        state = request.GET['state']
+
+    carrera = Career(
+        name = name,
+        shortname = shortname,
+        image = image,
+        state = state
+    )
+    carrera.save()
+    carreras = Career.objects.all()
+    return render(request, 'carreras.html', {'carreras': carreras})
+
+
+def carreras(request):
+    carreras = Course.objects.all()
+    return render(request, 'carreras.html', {'carreras': carreras})
+
 def cursos(request):
     courses = Course.objects.all()
     return render(request, 'cursos.html', {'courses': courses})
