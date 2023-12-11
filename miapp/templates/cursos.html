@@ -3,4 +3,9 @@
 
 {% block content %}
 <h1>Listado de cursos</h1>
+    <ul>
+        {% for course in courses %}
+            <li>{{ course.name }} - {{ course.code }} - {{ course.hour }} horas - {{ course.credits }} créditos</li>
+        {% endfor %}
+    </ul>
 {% endblock %}

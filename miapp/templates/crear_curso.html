@@ -2,4 +2,26 @@
 
 {% block content %}
 <h1>Agregar curso</h1>
+<form action="{% url 'save_curso' %}" method="GET">
+    <label for="Codigo">Codigo</label>
+    <input type="text" name="code" />
+
+    <label for="Nombre">Nombre </label>
+    <input type="text" name="name" />
+
+    <label for="Hora">Hora </label>
+    <input type="number" name="hour" />
+
+    <label for="Creditos">Creditos </label>
+    <input type="number" name="credits" />
+
+    <label for="state">Estado</label>
+    <select name="state">
+        <option value="1"> Si </option>
+        <option value="0"> No </option>
+    </select>
+
+
+    <input type="submit" value="Agregar" />
+</form>
 {% endblock %}
